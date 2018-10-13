@@ -12,4 +12,13 @@ body {
   & p {
     background: black !important;
   }
+  & .one {
+    font-family: 'raleway-bold';
+    font-size: 40px;
+    margin-bottom: 20px; 
+  }
+
+  & .two {
+    font-size: 40px;
+  }
 }  
