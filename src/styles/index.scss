@@ -14,11 +14,18 @@ body {
   &-section {
     &_header {
       height: 100vh;
-      background: url(../../public/images/headphones.svg);
+      background: url(../../public/images/headphones.svg),
+      url(../../public/images/pen.svg),
+      url(../../public/images/earphones.svg), 
+      url(../../public/images/phone-head.svg), 
+      #42a8f6;
+      background-position: top left, bottom left, right center, 50% bottom, top left;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
 
     }
     &__inner {
-      padding: 0 250px;
+      margin: 0 auto;
+      padding: 0 16%;
     }
   }
 }
