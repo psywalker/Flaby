@@ -28,6 +28,7 @@ body {
   &-section {
     &_header {
       height: 100vh;
+      min-height: 470px;
       background: url(../../public/images/headphones.svg),
       url(../../public/images/pen.png),
       url(../../public/images/earphones.svg), 
@@ -38,6 +39,10 @@ body {
       background-size: auto 40vmin, 20vmin auto, 20vmin auto, 40vmin auto, 1px 1px;
       @media screen and (min-width: 0px) and (max-width: 1340px) {
         background-size: auto 30vmin, 20vmin auto, 20vmin auto, 40vmin auto, 1px 1px;
+      }
+      @media screen and (min-width: 0px) and (max-width: 700px) and (min-height: 0px) and (max-height: 600px) {
+        height: auto;
+        min-height: 100vh;
       }
 
     }
@@ -56,7 +61,7 @@ body {
     align-items: center;
     padding-top: 45px;
     position: relative;
-    
+    z-index: 1;
     &__logo {
       margin-right: auto;
     }
@@ -228,6 +233,7 @@ body {
     left: 16%;
     right: 16%;
     bottom: 10%;
+
     &__title {
       font-family: 'raleway-medium';
       text-transform: uppercase;
@@ -243,6 +249,9 @@ body {
     }
     &__btns {
       display: flex;
+      @media screen and (min-width: 0px) and (max-width: 700px) {
+        display: block;
+      }
     }
     &__btn {
       width: 245px;
@@ -269,6 +278,48 @@ body {
       &_more {
         background: rgba(71, 158, 225, .8);
         color: #fff;
+      }
+
+    }
+    @media screen and (min-height: 0px) and (max-height: 470px) {
+      position: static;
+      
+      &__title {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+      &__text {
+        font-size: 20px;
+        margin-bottom: 40px;
+      }
+        
+      &__btn {
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+    @media screen and (min-width: 0px) and (max-width: 700px) {
+      position: static;
+      margin-top: 80px;
+      
+      &__title {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+      &__text {
+        font-size: 20px;
+        margin-bottom: 40px;
+      }
+        
+      &__btn {
+        height: 40px;
+        line-height: 40px;
+        @media screen and (min-width: 0px) and (max-width: 700px) {
+          margin-left: 0;
+          margin-bottom: 15px;
+          height: 50px;
+          line-height: 50px;
+        }
       }
     }
   }
