@@ -11,6 +11,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'raleway-medium';
+  src: url('../fonts/raleway-medium.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   @media screen and (min-width: 0px) and (max-width: 940px) {
@@ -28,12 +35,19 @@ body {
       #42a8f6;
       background-position: top left, bottom left, right center, 70% bottom, top left;
       background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
-      background-size: 25vmin auto, 20vmin auto, 20vmin auto, 40vmin auto, 1px 1px;
+      background-size: auto 40vmin, 20vmin auto, 20vmin auto, 40vmin auto, 1px 1px;
+      @media screen and (min-width: 0px) and (max-width: 1340px) {
+        background-size: auto 30vmin, 20vmin auto, 20vmin auto, 40vmin auto, 1px 1px;
+      }
 
     }
     &__inner {
       margin: 0 auto;
       padding: 0 17%;
+      transition: all .3s;
+      @media screen and (min-width: 0px) and (max-width: 1340px) {
+        padding: 0 13%;
+      }
     }
   }
 
@@ -41,11 +55,28 @@ body {
     display: flex;
     align-items: center;
     padding-top: 45px;
+    position: relative;
     
     &__logo {
       margin-right: auto;
     }
-
+    &__list-wrap {
+      display: flex;
+      align-items: center;
+      transition: all .3s;
+      @media screen and (min-width: 0px) and (max-width: 1200px) {
+        flex-wrap: wrap;
+        position: absolute;
+        top: 43px;
+        right: 0;
+        width: 150px;
+        background: rgba(71, 158, 225, 1);
+        padding: 10px;
+        border-radius: 10px;
+        display: none;
+        padding: 25px 0;
+      }
+    }
     &__list {
 
     }
@@ -53,6 +84,70 @@ body {
     &__login-btn {
 
     }
+
+    .nav-btn {
+      width: 18px;
+      height: 10px;
+      position: absolute;
+      right: 5px;
+      top: 55px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      display: none;
+      outline: none;
+      z-index: 1;
+      @media screen and (min-width: 0px) and (max-width: 1200px) {
+        display: block;
+      }
+      &__line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border-radius: 2px;
+        height: 2px;
+        transition-property: background-color, opacity, transform;
+        transition-duration: .3s;
+        transition-timing-function: ease-out;
+        cursor: pointer;
+        &_top {
+          top: 0;
+        }
+        &_middle {
+          top: 4px;
+        }
+        &_bottom {
+          top: 8px;
+        }
+      }
+      &.nav-btn_type_close {
+        top: 50px;
+        right: 5px;
+        height: 17px;
+        padding: 10px;
+      
+        .nav-btn__line {
+          height: 2px;
+        }
+        .nav-btn__line_top {
+          top: 8px;
+          transform: rotate(-45deg);
+        }
+        .nav-btn__line_middle {
+          opacity: 0;
+          top: 6px;
+        }
+        .nav-btn__line_bottom {
+          top: 8px;
+          transform: rotate(45deg);
+        }
+        & + .nav__list-wrap {
+          display: block;
+        }
+      }
+    }
+
   }
 
   .logo {
@@ -70,8 +165,19 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    @media screen and (min-width: 0px) and (max-width: 1200px) {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
     &__item {
       margin-right: 35px;
+      @media screen and (min-width: 0px) and (max-width: 1200px) {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center
+      }
     }
     &__link {
       font-family: 'raleway-semiBold';
@@ -81,6 +187,10 @@ body {
       font-size: 17px;
       letter-spacing: .8px;
       transition: all .3s;
+      @media screen and (min-width: 0px) and (max-width: 1200px) {
+        width: 100%;
+        display: block;
+      }
       &:hover {
         color: rgb(241, 198, 198);
       }
@@ -103,7 +213,64 @@ body {
       background: #fff;
       color: rgba(71, 158, 225, .8);
     }
+    @media screen and (min-width: 0px) and (max-width: 1200px) {
+      margin: 0 auto;
+      padding: 10px 31px;
+      width: 100%;
+      box-sizing: border-box;
+      background: rgba(71, 158, 225, 1);
+    }
   }
 
+  & .tamplate-desc {
+    max-width: 510px;
+    position: absolute;
+    left: 16%;
+    right: 16%;
+    bottom: 10%;
+    &__title {
+      font-family: 'raleway-medium';
+      text-transform: uppercase;
+      font-size: 40px;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    &__text {
+      font-family: 'raleway-medium';
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 60px;
+    }
+    &__btns {
+      display: flex;
+    }
+    &__btn {
+      width: 245px;
+      height: 80px;
+      margin-left: 30px;
+      border: none;
+      line-height: 80px;
+      text-align: center;
+      border-radius: 15px; 
+      font-family: 'raleway-semiBold';
+      font-size: 20px;
+      cursor: pointer;
+      transition: all .3s;
+      &:hover {
+        opacity: .8;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+      &_google {
+        background: #fff url(../../public/images/google_play.svg) 30px center no-repeat;
+        text-indent: 30px;
+      }
+      &_more {
+        background: rgba(71, 158, 225, .8);
+        color: #fff;
+      }
+    }
+  }
  
 }
