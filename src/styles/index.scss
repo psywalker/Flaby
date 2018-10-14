@@ -4,8 +4,15 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'raleway-semiBold';
+  src: url('../fonts/raleway-semiBold.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
+  margin: 0;
   @media screen and (min-width: 0px) and (max-width: 940px) {
 
   }
@@ -15,17 +22,88 @@ body {
     &_header {
       height: 100vh;
       background: url(../../public/images/headphones.svg),
-      url(../../public/images/pen.svg),
+      url(../../public/images/pen.png),
       url(../../public/images/earphones.svg), 
-      url(../../public/images/phone-head.svg), 
+      url(../../public/images/phone-head.png), 
       #42a8f6;
-      background-position: top left, bottom left, right center, 50% bottom, top left;
+      background-position: top left, bottom left, right center, 70% bottom, top left;
       background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+      background-size: 25vmin auto, 20vmin auto, 20vmin auto, 40vmin auto, 1px 1px;
 
     }
     &__inner {
       margin: 0 auto;
-      padding: 0 16%;
+      padding: 0 17%;
     }
   }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    padding-top: 45px;
+    
+    &__logo {
+      margin-right: auto;
+    }
+
+    &__list {
+
+    }
+
+    &__login-btn {
+
+    }
+  }
+
+  .logo {
+    display: block;
+    width: 168px;
+    height: 51px;
+    transition: all .3s;
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &__item {
+      margin-right: 35px;
+    }
+    &__link {
+      font-family: 'raleway-semiBold';
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      letter-spacing: .8px;
+      transition: all .3s;
+      &:hover {
+        color: rgb(241, 198, 198);
+      }
+    }
+  }
+
+  .login-btn {
+    font-family: 'raleway-semiBold';
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(71, 158, 225, .8);
+    cursor: pointer;
+    border: none;
+    font-size: 17px;
+    border-radius: 10px;
+    padding: 20px 31px;
+    letter-spacing: .8px;
+    transition: all .3s;
+    &:hover {
+      background: #fff;
+      color: rgba(71, 158, 225, .8);
+    }
+  }
+
+ 
 }
