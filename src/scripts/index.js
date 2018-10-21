@@ -17,9 +17,15 @@ $('#nav-btn').click(function() {
     console.log('clicked');
   });
   $(document).ready(function(){
-    $('.your-class').slick({
-        dots: true,
-        speed: 500,
+    $('.about-slider').slick({
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 1,
+        variableWidth: true,
         arrows: true,
+        infinite: true,
+        draggable: true,
+        nextArrow: document.querySelector('.about-slider-next'),
+        prevArrow: document.querySelector('.about-slider-prev')
       });
   });
